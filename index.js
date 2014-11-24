@@ -1,4 +1,4 @@
-/* 
+/*
  * Alchemist-hsl
  *
  * Author: Michael C. Mullins
@@ -12,7 +12,6 @@
  */
 
 module.exports = function hsl () {
-
   return {
     name: 'hsl',
     to: {
@@ -37,7 +36,7 @@ module.exports = function hsl () {
         rgb = [0, 0, 0];
 
         for (var i = 0; i < 3; i++) {
-          t3 = h + 1 / 3 * - (i - 1);
+          t3 = h + 1 / 3 * -(i - 1);
           t3 < 0 && t3++;
           t3 > 1 && t3--;
           if (6 * t3 < 1)
@@ -67,7 +66,6 @@ module.exports = function hsl () {
         max = Math.max(r, g, b)
         delta = max - min
 
-
         if (max == min)
           h = 0;
         else if (r == max)
@@ -75,7 +73,7 @@ module.exports = function hsl () {
         else if (g == max)
           h = 2 + (b - r) / delta;
         else if (b == max)
-          h = 4 + (r - g)/ delta;
+          h = 4 + (r - g) / delta;
         h = Math.min(h * 60, 360);
 
         if (h < 0)
