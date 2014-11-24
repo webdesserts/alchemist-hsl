@@ -1,6 +1,6 @@
 {
   "name": "alchemist-hsl",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "the official HSL plugin for Alchemist.js",
   "main": "index.js",
   "scripts": {
