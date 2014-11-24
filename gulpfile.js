@@ -49,7 +49,7 @@ gulp.task('watch:lint', ['lint'], function () {
 
 gulp.task('default', ['test'], function () {
   gulp.watch('test/*.js', ['test'])
-  gulp.watch('lib/*.js', ['test', 'lint'])
+  gulp.watch('index.js', ['test', 'lint'])
 })
 
 function warn (err) {
