@@ -13,7 +13,7 @@ By default alchemist-hsl is included in `alchemist.common`.
 ```js
   var alchemist = require('alchemist-js').create()
   alchemist.use(alchemist.common())
-  var color = alchemize.hsl(255,255,255)
+  var color = alchemize.hsl(210,30,70)
 ```
 
 If you are not using alchemist.common you can instead use this library directly.
