@@ -21,7 +21,7 @@ If you are not using alchemist.common you can instead use this library directly.
 ```js
   var alchemist = require('alchemist-js').create()
   var hsl = require('alchemist-hsl')
-  alchemist.use(hsl)
+  alchemist.use(hsl())
 ```
 
 ### Web
