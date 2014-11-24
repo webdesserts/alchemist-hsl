@@ -54,16 +54,20 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-module.exports = function hsl () {
-  var hue2rgb = function hue2rgb (m1, m2, h) {
-    if (h < 0) h += 1;
-    else if (h > 1) h -= 1;
-    if (h * 6 < 1) return m1 + (m2 - m1) * h * 6;
-    if (h * 2 < 1) return m2;
-    if (h * 3 < 2) return m2 + (m2 - m1) * (2 / 3 - h) * 6;
-    return m1
-  }
+/*
+ * Alchemist-hsl
+ *
+ * Author: Michael C. Mullins
+ * License: MIT
+ *
+ * Even though I am technically the author of this module, these conversions
+ * were blatantly copied form harthor's color-convert project. Many thanks
+ * to her and all of that project's contributers!
+ *
+ * You can find color-convert here: https://github.com/harthur/color-convert
+ */
 
+module.exports = function hsl () {
   return {
     name: 'hsl',
     to: {
@@ -88,7 +92,7 @@ module.exports = function hsl () {
         rgb = [0, 0, 0];
 
         for (var i = 0; i < 3; i++) {
-          t3 = h + 1 / 3 * - (i - 1);
+          t3 = h + 1 / 3 * -(i - 1);
           t3 < 0 && t3++;
           t3 > 1 && t3--;
           if (6 * t3 < 1)
@@ -108,14 +112,15 @@ module.exports = function hsl () {
 
     from: {
       'rgb': function rgb2hsl (r, g, b) {
-        var min = Math.min(r, g, b),
-            max = Math.max(r, g, b),
-            delta = max - min,
-            h, s, l;
+        var h, s, l, min, max, delta;
 
         r /= 255
         g /= 255
         b /= 255
+
+        min = Math.min(r, g, b)
+        max = Math.max(r, g, b)
+        delta = max - min
 
         if (max == min)
           h = 0;
@@ -124,7 +129,7 @@ module.exports = function hsl () {
         else if (g == max)
           h = 2 + (b - r) / delta;
         else if (b == max)
-          h = 4 + (r - g)/ delta;
+          h = 4 + (r - g) / delta;
         h = Math.min(h * 60, 360);
 
         if (h < 0)
