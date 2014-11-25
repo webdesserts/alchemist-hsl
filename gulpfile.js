@@ -2,11 +2,12 @@ var gulp = require('gulp')
 var g = require('gulp-load-plugins')()
 var del = require('del')
 var series = require('run-sequence')
+var plugin = require('./')()
 
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']))
 
 gulp.task('build:min', ['build:web'], function () {
-  return gulp.src('dist/alchemist-hsl.js')
+  return gulp.src('dist/alchemist-' + plugin.name + '.js')
   .pipe(g.uglify())
   .pipe(g.rename({ suffix: '.min' }))
   .pipe(gulp.dest('dist'))
@@ -16,9 +17,9 @@ gulp.task('build:web', function () {
   return gulp.src('index.js')
   .pipe(g.webpack({
     output: {
-      filename: 'alchemist-hsl.js',
+      filename: 'alchemist-' + plugin.name + '.js',
       libraryTarget: 'umd',
-      library: 'alchemist_hsl',
+      library: 'alchemist_' + plugin.name,
       sourcePrefix: ''
     }
   }))
