@@ -23,8 +23,6 @@ module.exports = function hsl () {
         var t1, t2, t3, rgb, val;
 
         h /= 360
-        s /= 100
-        l /= 100
 
         if (s == 0) {
           val = l * 255;
@@ -90,7 +88,7 @@ module.exports = function hsl () {
         else
           s = delta / (2 - max - min);
 
-        return [h, s * 100, l * 100];
+        return [h, s, l];
       }
     }
   }
