@@ -7,7 +7,7 @@ default in [alchemist-common][] and consiquentially, alchemist itself.
 
 [npm package]: https://www.npmjs.com/package/alchemist-hsl
 [UMD Module]: /dist/
-[npm package]: https://www.npmjs.com/package/alchemist-common
+[alchemist-common]: https://www.npmjs.com/package/alchemist-common
 
 
 Special Thanks
