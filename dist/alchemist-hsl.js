@@ -70,13 +70,15 @@ return /******/ (function(modules) { // webpackBootstrap
 module.exports = function hsl () {
   return {
     name: 'hsl',
+    limits: {
+      max: [360, 1, 1],
+      min: [0, 0, 0]
+    },
     to: {
       'rgb': function hsl2rgb (h, s, l) {
         var t1, t2, t3, rgb, val;
 
         h /= 360
-        s /= 100
-        l /= 100
 
         if (s == 0) {
           val = l * 255;
@@ -142,7 +144,7 @@ module.exports = function hsl () {
         else
           s = delta / (2 - max - min);
 
-        return [h, s * 100, l * 100];
+        return [h, s, l];
       }
     }
   }

@@ -32,10 +32,10 @@ describe('hsl', function () {
       expect(alchemist.hsl(173, .55, .42).rgb()).to.deep.eq([48.19, 166, 152.3])
     })
     it('handles greys correctly', function () {
-      expect(alchemist.hsl(0, 0, .2).rgb()).to.deep.eq([51, 51 ,51])
+      expect(alchemist.hsl(0, 0, .2).rgb()).to.deep.eq([51, 51, 51])
     })
     it('ignores set hue when dealing with a grey', function () {
-      expect(alchemist.hsl(20, 0, .2).rgb()).to.deep.eq([51, 51 ,51])
+      expect(alchemist.hsl(20, 0, .2).rgb()).to.deep.eq([51, 51, 51])
     })
     it('handles black correctly', function () {
       expect(alchemist.hsl(0, 0, 0).rgb()).to.deep.eq([0, 0, 0])
