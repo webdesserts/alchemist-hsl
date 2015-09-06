@@ -1,6 +1,5 @@
-var expect = require('chai').expect
-var Alchemist = require('alchemist-js')
-var hsl = require('../index.js')
+import Alchemist from 'alchemist-js'
+import hsl from '../index.js'
 
 describe('hsl', function () {
   var alchemist, rgb;

@@ -11,7 +11,7 @@
  * You can find color-convert here: https://github.com/harthur/color-convert
  */
 
-module.exports = function hsl () {
+export default function hsl () {
   return {
     name: 'hsl',
     limits: {
